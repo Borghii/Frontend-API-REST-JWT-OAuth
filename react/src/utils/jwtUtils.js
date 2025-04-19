@@ -56,6 +56,8 @@ const VALID_PERMISSIONS = [
   "DELETE ",
   "READ",
   "ROLE_ADMIN",
+  "ROLE_DEVELOPER",
+  "ROLE_INVITED",
   "UPDATE",
 ]; // Definir según tu API
 
