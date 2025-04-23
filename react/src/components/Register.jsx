@@ -60,12 +60,12 @@ const Register = () => {
           </div>
 
           <div className="flex gap-4 justify-between">
-            <label htmlFor="username">User</label>
+            <label htmlFor="surname">Surname</label>
             <input
               type="text"
-              id="username"
-              name="username"
-              value={userData.username}
+              id="surname"
+              name="surname"
+              value={userData.surname}
               onChange={handleChange}
               className="bg-white/10 text-xl text-white rounded-lg p-1 w-2/3"
               required
@@ -92,19 +92,6 @@ const Register = () => {
               id="password"
               name="password"
               value={userData.password}
-              onChange={handleChange}
-              className="bg-white/10 text-xl text-white rounded-lg p-1 w-2/3"
-              required
-            />
-          </div>
-
-          <div className="flex gap-4 justify-between">
-            <label htmlFor="surname">Surname</label>
-            <input
-              type="text"
-              id="surname"
-              name="surname"
-              value={userData.surname}
               onChange={handleChange}
               className="bg-white/10 text-xl text-white rounded-lg p-1 w-2/3"
               required

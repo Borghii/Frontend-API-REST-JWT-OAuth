@@ -51,15 +51,7 @@ export const getUserPermissions = () => {
   }
 };
 
-const VALID_PERMISSIONS = [
-  "CREATE ",
-  "DELETE ",
-  "READ",
-  "ROLE_ADMIN",
-  "ROLE_DEVELOPER",
-  "ROLE_INVITED",
-  "UPDATE",
-]; // Definir según tu API
+const VALID_PERMISSIONS = ["CREATE", "DELETE", "READ", "UPDATE"]; // Definir según tu API
 
 // Verificar si el usuario tiene el permiso requerido
 export const hasPermission = (requiredPermission) => {
