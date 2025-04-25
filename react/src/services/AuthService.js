@@ -1,11 +1,11 @@
 import axios from "axios";
 
 // Instancia de axios con configuración base
-const API_URL = "http://localhost:8080/api/v1/auth";
+const API_URL_AUTH = "http://localhost:8080/api/v1/auth";
 
 // Crear una instancia de axios
 const api = axios.create({
-  baseURL: API_URL,
+  baseURL: API_URL_AUTH,
   headers: {
     "Content-Type": "application/json",
   },
@@ -26,13 +26,16 @@ api.interceptors.request.use(
 // Servicio de registro
 export const register = async (userData) => {
   const response = await api.post("/sign-up", userData);
+
   if (response.data.token) {
     localStorage.setItem("token", response.data.token);
+    console.log("token saved");
   }
+
   return response.data;
 };
 
-export const login = async (credentials) => {
+export const signIn = async (credentials) => {
   console.log("credentials", credentials);
 
   // Crear el header de Basic Auth

@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { register } from "../services/AuthService";
+import { useAuth } from "../context/AuthContext";
 
 const Register = () => {
   const [userData, setUserData] = useState({
     name: "",
     surname: "",
-    username: "",
     email: "",
     password: "",
     roles: ["INVITED"], // valor por defecto
   });
+
+  const { login } = useAuth();
 
   const [error, setError] = useState("");
   const navigate = useNavigate();
@@ -27,8 +29,9 @@ const Register = () => {
     setError("");
 
     try {
-      await register(userData);
-      navigate("/login");
+      const response = await register(userData);
+      login(response.token);
+      navigate("/dashboard");
     } catch (err) {
       console.log(err);
 

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-import { login } from "../services/AuthService";
+import { signIn } from "../services/AuthService";
 import { useAuth } from "../context/AuthContext";
 
 const Login = () => {
@@ -11,7 +11,7 @@ const Login = () => {
   });
   const [error, setError] = useState("");
   const navigate = useNavigate();
-  const { login: authLogin } = useAuth();
+  const { login } = useAuth();
 
   const handleChange = (e) => {
     setCredentials({
@@ -25,8 +25,8 @@ const Login = () => {
     setError("");
 
     try {
-      const response = await login(credentials);
-      authLogin(response.token);
+      const response = await signIn(credentials);
+      login(response.token);
       navigate("/dashboard");
     } catch (err) {
       console.log(err);
