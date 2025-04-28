@@ -30,7 +30,7 @@ const Register = () => {
 
     try {
       const response = await register(userData);
-      login(response.token);
+      login(response);
       navigate("/dashboard");
     } catch (err) {
       console.log(err);

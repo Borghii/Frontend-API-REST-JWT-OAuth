@@ -26,7 +26,7 @@ const Login = () => {
 
     try {
       const response = await signIn(credentials);
-      login(response.token);
+      login(response);
       navigate("/dashboard");
     } catch (err) {
       console.log(err);

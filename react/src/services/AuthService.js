@@ -29,6 +29,7 @@ export const register = async (userData) => {
 
   if (response.data.token) {
     localStorage.setItem("token", response.data.token);
+    localStorage.setItem("userInfo", response.data.userDTO);
     console.log("token saved");
   }
 
@@ -58,6 +59,7 @@ export const signIn = async (credentials) => {
 
   if (response.data.token) {
     localStorage.setItem("token", response.data.token);
+    localStorage.setItem("userInfo", response.data.userDTO);
   }
 
   return response.data;
@@ -66,6 +68,7 @@ export const signIn = async (credentials) => {
 // Servicio de logout
 export const logout = () => {
   localStorage.removeItem("token");
+  localStorage.removeItem("userInfo");
 };
 
 // Servicio para verificar si el usuario está autenticado
