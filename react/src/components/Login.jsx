@@ -53,6 +53,7 @@ const Login = () => {
               className="bg-white/10 text-xl text-white rounded-lg p-1 w-2/3"
               onChange={handleChange}
               required
+              autoComplete="username" // ← esto es lo importante
             />
           </div>
 
@@ -66,6 +67,7 @@ const Login = () => {
               onChange={handleChange}
               className="bg-white/10 text-xl text-white rounded-lg p-1 w-2/3"
               required
+              autoComplete="current-password"
             />
           </div>
 

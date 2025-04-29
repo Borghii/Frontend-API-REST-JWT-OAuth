@@ -131,7 +131,7 @@ export const UpdateUser = ({ onSearch }) => {
           <select
             id="roles"
             name="roles"
-            value={userData.roles}
+            value={userData.roles[0]}
             onChange={(e) =>
               setUserData({ ...userData, roles: [e.target.value] })
             }

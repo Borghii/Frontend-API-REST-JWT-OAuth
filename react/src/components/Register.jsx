@@ -98,6 +98,7 @@ const Register = () => {
               onChange={handleChange}
               className="bg-white/10 text-xl text-white rounded-lg p-1 w-2/3"
               required
+              autoComplete="new-password" // ← esto es lo importante
             />
           </div>
 

@@ -33,8 +33,7 @@ export const isTokenExpired = (token) => {
 };
 
 // Obtener todos los permisos del usuario desde el token
-export const getUserPermissions = () => {
-  const token = localStorage.getItem("token");
+export const getUserPermissions = (token) => {
   if (!token) return [];
 
   try {
@@ -59,6 +58,6 @@ export const hasPermission = (requiredPermission) => {
     console.warn(`Permiso no reconocido: ${requiredPermission}`);
     return false;
   }
-  const permissions = getUserPermissions();
+  const permissions = getUserPermissions(localStorage.getItem("token"));
   return permissions.includes(requiredPermission);
 };
