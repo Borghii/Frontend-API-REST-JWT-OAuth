@@ -25,10 +25,3 @@
 ✔️ Notificaciones para acciones importantes (login, errores, éxito).
 ✔️ Integración completa con el backend mediante peticiones HTTP.
 
-
-VITE_API_URL=https://tu-api.com/api
-```
-
----
-
-¿Te gustaría que también te prepare un ejemplo de estructura de carpetas real o un `Dockerfile` para desplegar este frontend?
