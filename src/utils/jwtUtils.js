@@ -5,7 +5,7 @@ export const decodeToken = (token) => {
   try {
     const decoded = jwtDecode(token);
 
-    // Verifica estructura mínima del token (opcional)
+    // Verifica estructura mínima del token
     if (!decoded.exp || !decoded.iat) {
       console.warn("Token inválido: falta exp/iat");
       return null;
@@ -18,7 +18,6 @@ export const decodeToken = (token) => {
   }
 };
 
-// Verificar si el token ha expirado
 export const isTokenExpired = (token) => {
   if (!token) return true;
 
@@ -32,13 +31,12 @@ export const isTokenExpired = (token) => {
   }
 };
 
-// Obtener todos los permisos del usuario desde el token
 export const getUserPermissions = (token) => {
   if (!token) return [];
 
   try {
     const decoded = decodeToken(token);
-    // Extraemos todos los permisos del scope como array
+
     if (decoded.scope) {
       return decoded.scope.split(" ");
     }
@@ -50,7 +48,7 @@ export const getUserPermissions = (token) => {
   }
 };
 
-const VALID_PERMISSIONS = ["CREATE", "DELETE", "READ", "UPDATE"]; // Definir según tu API
+const VALID_PERMISSIONS = ["CREATE", "DELETE", "READ", "UPDATE"];
 
 // Verificar si el usuario tiene el permiso requerido
 export const hasPermission = (requiredPermission) => {
