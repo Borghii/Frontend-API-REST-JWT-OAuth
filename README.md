@@ -1,12 +1,27 @@
-# React + Vite
+# ✅ Frontend – Interfaz Web para API REST
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 1️⃣ Tecnologías y Herramientas
 
-Currently, two official plugins are available:
+* **React** – Biblioteca principal para construir interfaces de usuario.
+* **Vite** – Herramienta de desarrollo rápido para aplicaciones React.
+* **Tailwind CSS** – Framework de estilos utilitario y moderno.
+* **JavaScript (ES6+)** – Lenguaje principal del proyecto.
+* **HTML5 + CSS3** – Estructura y estilos base.
+* **Axios o Fetch API** – Para consumir la API REST.
+* **React Router** – Para navegación entre vistas.
+* ** Context API ** – Para manejo de estado global.
+* **ESLint + Prettier** – Para mantener un código limpio y uniforme.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 2️⃣ Funcionalidades del Proyecto
 
-## Expanding the ESLint configuration
+✔️ Consumo de la API REST desarrollada con Spring Boot.
+✔️ Login y registro de usuarios con JWT.
+✔️ Control de acceso por roles (admin, user).
+✔️ Navegación protegida con rutas privadas.
+✔️ Interfaz responsiva y moderna usando Tailwind.
+✔️ Formularios validados con feedback dinámico.
+✔️ Listado, creación, edición y eliminación de recursos (CRUD).
+✔️ Manejo de errores en la interfaz.
+✔️ Notificaciones para acciones importantes (login, errores, éxito).
+✔️ Integración completa con el backend mediante peticiones HTTP.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
