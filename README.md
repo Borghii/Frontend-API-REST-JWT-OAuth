@@ -9,7 +9,7 @@
 * **HTML5 + CSS3** – Estructura y estilos base.
 * **Axios o Fetch API** – Para consumir la API REST.
 * **React Router** – Para navegación entre vistas.
-* **Context API ** – Para manejo de estado global.
+* ** Context API ** – Para manejo de estado global.
 * **ESLint + Prettier** – Para mantener un código limpio y uniforme.
 
 ## 2️⃣ Funcionalidades del Proyecto
