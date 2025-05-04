@@ -36,15 +36,12 @@ export const PanelHeader = () => {
     fetchNickname();
   }, [userInfo?.name, nickname]);
 
-  if (loading || !userInfo?.name) {
-    return <div>Cargando...</div>;
-  }
-
   return (
     <>
       <div className="flex justify-between items-center w-full">
         <h1 className="text-4xl font-bold">
-          Bienvenido, {nickname}({userInfo.name})
+          Bienvenido,
+          {loading || !userInfo?.name ? "" : ` ${nickname} (${userInfo.name})`}
         </h1>
         <button onClick={logout}>Cerrar Sesión</button>
       </div>

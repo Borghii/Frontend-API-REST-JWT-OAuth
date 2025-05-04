@@ -24,10 +24,10 @@ api.interceptors.response.use(
   (res) => res,
   (err) => {
     const status = err.response?.status;
-    if (status === 401 || status === 403) {
+    if (status === 401) {
       localStorage.setItem(
         "sessionExpiredMessage",
-        "Your session has expired. Please log in again."
+        err.response?.data?.message || "Session expired"
       );
       localStorage.removeItem("token");
       localStorage.removeItem("userInfo");
