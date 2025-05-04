@@ -1,5 +1,6 @@
 import axios from "axios";
 import { isTokenExpired } from "../utils/jwtUtils";
+import { redirectToLogin } from "../utils/navigateHelper";
 
 // Crear una instancia de axios
 const api = axios.create({
@@ -24,9 +25,13 @@ api.interceptors.response.use(
   (err) => {
     const status = err.response?.status;
     if (status === 401 || status === 403) {
+      localStorage.setItem(
+        "sessionExpiredMessage",
+        "Your session has expired. Please log in again."
+      );
       localStorage.removeItem("token");
       localStorage.removeItem("userInfo");
-      window.location.href = "/login";
+      redirectToLogin();
     }
     return Promise.reject(err);
   }

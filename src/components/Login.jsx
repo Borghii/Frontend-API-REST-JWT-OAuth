@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 import { signIn } from "../services/AuthService";
@@ -12,6 +12,14 @@ const Login = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const { login } = useAuth();
+
+  useEffect(() => {
+    const expiredMessage = localStorage.getItem("sessionExpiredMessage");
+    if (expiredMessage) {
+      setError(expiredMessage);
+      localStorage.removeItem("sessionExpiredMessage");
+    }
+  }, []);
 
   const handleChange = (e) => {
     setCredentials({
@@ -29,9 +37,7 @@ const Login = () => {
       login(response);
       navigate("/dashboard");
     } catch (err) {
-      console.log(err);
-
-      setError("Credenciales incorrectas");
+      setError(err.response.data.message);
     }
   };
 
@@ -43,6 +49,8 @@ const Login = () => {
           className="text-xl space-y-4 flex justify-center flex-col w-sm"
           onSubmit={handleSubmit}
         >
+          {error && <div className="text-red-600">{error}</div>}
+
           <div className="flex gap-4 justify-between">
             <label htmlFor="username">Usuario</label>
             <input
@@ -70,8 +78,6 @@ const Login = () => {
               autoComplete="current-password"
             />
           </div>
-
-          {error && <div className="text-red-600">{error}</div>}
 
           <button type="submit" className="btn-login">
             Iniciar Sesión
