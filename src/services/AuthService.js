@@ -9,6 +9,7 @@ export const register = async (userData) => {
   if (token) {
     localStorage.setItem("token", token);
     localStorage.setItem("userInfo", JSON.stringify(userDTO));
+    localStorage.setItem("nickname", "");
   }
 
   return response.data;

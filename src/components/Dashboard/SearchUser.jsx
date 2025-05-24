@@ -4,6 +4,8 @@ import { getUserById, getAllUsers } from "../../services/UserService";
 export const SearchUser = ({ onSearch }) => {
   const [userId, setUserId] = useState("");
   const [error, setError] = useState("");
+  const page = 0;
+  const size = 5;
 
   const handleChange = (e) => {
     setUserId(e.target.value);
@@ -16,7 +18,7 @@ export const SearchUser = ({ onSearch }) => {
     try {
       let data;
       if (!userId) {
-        data = await getAllUsers();
+        data = await getAllUsers(page, size);
       } else {
         const user = await getUserById(userId);
         data = Array.isArray(user) ? user : [user]; // asegurar array

@@ -11,8 +11,10 @@ export const updateUserById = async (userId, userData) => {
   return response.data;
 };
 
-export const getAllUsers = async () => {
-  const response = await api.get(`${API_ENDPOINTS.USERS}`);
+export const getAllUsers = async (page, size) => {
+  const response = await api.get(
+    `${API_ENDPOINTS.USERS}?page=${page}&size=${size}`
+  );
   return response.data;
 };
 
