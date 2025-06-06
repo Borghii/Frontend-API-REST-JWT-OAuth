@@ -104,3 +104,5 @@ El proyecto fue desplegado en **AWS S3** como sitio estático y distribuido glob
 - HTTPS habilitado con certificado SSL
 - Redirección automática a `index.html` para rutas internas
 - Integración con API Gateway y backend Spring Boot desplegado en EC2
+
+![Diagram-Api-REST-JWT drawio (4)](https://github.com/user-attachments/assets/fce21920-6f70-4e2f-98a5-fae62ae1054a)
